@@ -1,19 +1,25 @@
-package com.devteria.profile.dto.response;
+package com.devteria.identity.dto.request;
 
 import java.time.LocalDate;
+
+import jakarta.validation.constraints.Size;
+
+import com.devteria.identity.validator.DobConstraint;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UserProfileResponse {
-    String id;
+public class ProfileCreationRequest {
+    String userId;
     String firstName;
     String lastName;
+    String email;
     LocalDate dob;
     String city;
 }
+
